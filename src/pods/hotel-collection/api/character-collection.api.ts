@@ -1,5 +1,3 @@
-
-
 import { Character } from './rickAndMorty.api-model';
 import { mockCharacterCollection } from './hotel-collection.mock-data';
 

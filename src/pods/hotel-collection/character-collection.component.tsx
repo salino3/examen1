@@ -1,8 +1,8 @@
 import * as React from 'react';
 import Button from '@mui/material/Button';
 import { HotelEntityVm } from './character-collection.vm';
-import { CharacterCard } from './components/hotel-card.component';
-import * as classes from './hotel-collection.styles';
+import { CharacterCard } from './components/character-card.component';
+import * as classes from './character-collection.styles';
  
 import { Character } from './api';
 

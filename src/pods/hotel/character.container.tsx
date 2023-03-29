@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import * as api from './api';
-import { createEmptyInfo, Hotel } from './hotel.vm';
+import { createEmptyInfo } from './character.vm';
 import {
   mapCharacterFromApiToVm,
   mapCharacterFromVmToApi,
@@ -14,7 +14,6 @@ export const HotelContainer: React.FunctionComponent = (props) => {
   const [character, setCharacter] = React.useState<Character>(
     createEmptyInfo()
   );
-  const [cities, setCities] = React.useState<Lookup[]>([]);
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
 
@@ -45,6 +44,6 @@ const handleLoadCharacter = async () => {
   };
 
   return (
-    <CharacterComponent character={character} cities={cities} onSave={handleSave} />
+    <CharacterComponent character={character} onSave={handleSave} />
   );
 };

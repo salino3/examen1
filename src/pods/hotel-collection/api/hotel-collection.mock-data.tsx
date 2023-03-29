@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Character, HotelEntityApi } from './rickAndMorty.api-model';
+import { Character } from './rickAndMorty.api-model';
 
 
 

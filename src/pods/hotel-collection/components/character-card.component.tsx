@@ -10,7 +10,7 @@ import IconButton from '@mui/material/IconButton/IconButton';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { CharacterEntityVm, HotelEntityVm } from '../character-collection.vm';
-import * as classes from './hotel-card.styles';
+import * as classes from './character-card.styles';
 
 interface Props {
   character: CharacterEntityVm;

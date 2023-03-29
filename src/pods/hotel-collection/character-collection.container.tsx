@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { linkRoutes } from 'core/router';
-import { useHotelCollection } from './hotel-collection.hook';
+import { useHotelCollection } from './character-collection.hook';
 import { CharacterCollectionComponent } from './character-collection.component';
 import { deleteCharacter } from './api';
 

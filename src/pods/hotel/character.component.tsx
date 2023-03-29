@@ -7,18 +7,17 @@ import {
   RatingComponent,
 } from 'common/components';
 import { Lookup } from 'common/models';
-import { formValidation } from './hotel.validations';
-import * as classes from './hotel.styles';
+import { formValidation } from './character.validations';
+import * as classes from './character.styles';
 import { Character } from './api';
 
 interface Props {
   character: Character;
-  cities: Lookup[];
   onSave: (character: Character) => void;
 }
 
 export const CharacterComponent: React.FunctionComponent<Props> = (props) => {
-  const { character, cities, onSave } = props;
+  const { character, onSave } = props;
 
   return (
     <Formik
@@ -27,23 +26,7 @@ export const CharacterComponent: React.FunctionComponent<Props> = (props) => {
       enableReinitialize={true}
       validate={formValidation.validateForm}
     >
-      {/* {() => (
-        <Form className={classes.root}>
-          <TextFieldComponent name="name" label="Name" />
-          <TextFieldComponent name="address" label="Address" />
-          <RatingComponent name="rating" max={5} />
-          <SelectComponent name="city" label="City" items={cities} />
-          <TextFieldComponent
-            name="description"
-            label="Description"
-            multiline={true}
-            rows={3}
-          />
-          <Button type="submit" variant="contained" color="primary">
-            Save
-          </Button>
-        </Form>
-      )} */}
+      
 
       {() => (
         <Form className={classes.root}>

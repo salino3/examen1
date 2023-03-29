@@ -1,1 +1,1 @@
-export * from './hotel-collection.container';
+export * from './character-collection.container';
