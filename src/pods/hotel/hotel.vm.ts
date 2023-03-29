@@ -7,19 +7,21 @@ export interface Hotel {
   city: string;
 }
 //!
-export interface Character {
-  id: number;
-  name: string;
-  status: string;
-  species: string;
-  gender: string;
-  origin: Origin;
-  location: Location;
-  image: string;
-  episode: string[];
-  url: string;
-  created: string;
-}
+// export interface Character {
+//   id: number;
+//   name: string;
+//   status: string;
+//   species: string;
+//   gender: string;
+//   type: string;
+//   origin: Origin;
+//   location: Location;
+//   image: string;
+//   episode: string[];
+//   url: string;
+//   created: string;
+//   bestSentences: string;
+// }
 
 export interface Origin {
  name: string;
@@ -33,11 +35,6 @@ export interface Location {
 
 
 
-export const createEmptyHotel = (): Hotel => ({
-  id: '',
-  name: '',
-  description: '',
-  rating: 3,
-  address: '',
-  city: '',
-});
+ export const createEmptyInfo = (): any  => ({
+  bestSentences: ""
+})

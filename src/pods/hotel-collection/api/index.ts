@@ -1,2 +1,2 @@
 export * from './hotel-collection.api';
-export * from './hotel-collection.api-model';
+export * from './rickAndMorty.api-model';

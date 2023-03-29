@@ -9,7 +9,7 @@ const hotelMiddleware = (req, res, next) => {
 };
 
 module.exports = (req, res, next) => {
-  if (req.path === '/hotels' || req.path === '/characters') {
+  if (req.path === '/characters') {
     hotelMiddleware(req, res, next);
   } else {
     next();

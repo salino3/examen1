@@ -11,15 +11,12 @@ export const RouterComponent: React.FunctionComponent = () => {
           path={switchRoutes.characters}
           element={<HotelCollectionScene />}
         />{' '}
-        <Route
-          path={switchRoutes.hotelCollection}
-          element={<HotelCollectionScene />}
-        />
+     
         <Route path={switchRoutes.createHotel} element={<HotelScene />} />
         <Route path={switchRoutes.editHotel} element={<HotelScene />} />
         <Route
           path={switchRoutes.root}
-          element={<Navigate to={switchRoutes.hotelCollection} />}
+          element={<Navigate to={switchRoutes.characters} />}
         />
       </Routes>
     </HashRouter>

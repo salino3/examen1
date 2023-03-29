@@ -9,45 +9,49 @@ import Avatar from '@mui/material/Avatar/Avatar';
 import IconButton from '@mui/material/IconButton/IconButton';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
-import { HotelEntityVm } from '../hotel-collection.vm';
+import { CharacterEntityVm, HotelEntityVm } from '../character-collection.vm';
 import * as classes from './hotel-card.styles';
 
 interface Props {
-  hotel: HotelEntityVm;
-  onEdit: (id: string) => void;
-  onDelete: (id: string) => void;
+  character: CharacterEntityVm;
+  onEdit: (id: number | string) => void;
+  onDelete: (id: number | string) => void;
 }
 
-export const HotelCard: React.FunctionComponent<Props> = (props) => {
-  const { hotel, onEdit, onDelete } = props;
+export const CharacterCard: React.FunctionComponent<Props> = (props) => {
+  const { character, onEdit, onDelete } = props;
 
+  console.log("leyendo Character",character)
   return (
-    <Card>
-      <CardHeader
-        avatar={<Avatar aria-label="Hotel">{hotel.rating}</Avatar>}
-        title={hotel.name}
-        subheader={hotel.address}
-      />
-      <CardContent>
-        <div className={classes.content}>
-          <CardMedia
-            image={hotel.picture}
-            title={hotel.name}
-            style={{ height: 0, paddingTop: '56.25%' }}
-          />
-          <Typography variant="subtitle1" gutterBottom>
-            {hotel.description}
-          </Typography>
-        </div>
-      </CardContent>
-      <CardActions>
-        <IconButton onClick={() => onEdit(hotel.id)}>
-          <EditIcon />
-        </IconButton>
-        <IconButton onClick={() => onDelete(hotel.id)}>
-          <DeleteIcon />
-        </IconButton>
-      </CardActions>
-    </Card>
+    <>
+      <Card>
+        <CardHeader
+          avatar={<Avatar aria-label="imagen"></Avatar>}
+          title={character.name}
+          subheader={character.status}
+        />
+
+        <CardContent>
+          <div className={classes.content}>
+            <CardMedia
+              image={character.image}
+              title={character.name}
+              style={{ height: 0, paddingTop: '56.25%' }}
+            />
+            <Typography variant="subtitle1" gutterBottom>
+              {character.type}
+            </Typography>
+          </div>
+        </CardContent>
+        <CardActions>
+          <IconButton onClick={() => onEdit(character.id)}>
+            <EditIcon />
+          </IconButton>
+          <IconButton onClick={() => onDelete(character.id)}>
+            <DeleteIcon />
+          </IconButton>
+        </CardActions>
+      </Card>
+    </>
   );
 };

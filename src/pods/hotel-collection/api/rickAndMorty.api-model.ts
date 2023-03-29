@@ -38,17 +38,19 @@ export interface HotelEntityApi {
 
 //!
 export interface Character {
-  id: number;
-  name: string;
-  status: string;
-  species: string;
-  gender: string;
-  origin: Origin;
-  location: Location;
-  image: string;
-  episode: string[];
-  url: string;
-  created: string;
+  type?: string;
+  id?: number | string;
+  name?: string;
+  status?: string;
+  species?: string;
+  gender?: string;
+  origin?: Origin;
+  location?: Location;
+  image?: string;
+  episode?: string[];
+  url?: string;
+  created?: string;
+  bestSentences?: string;
 }
 
 export interface Origin {

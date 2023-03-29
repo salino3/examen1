@@ -1,2 +1,2 @@
-export * from './hotel.api';
-export * from './hotel.api-model';
+export * from './characters.api';
+export * from './rickAndMorty.api-model';

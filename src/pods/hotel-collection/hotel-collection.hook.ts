@@ -1,19 +1,25 @@
 import * as React from 'react';
-import { HotelEntityVm } from './hotel-collection.vm';
-import { getHotelCollection } from './api';
-import { mapFromApiToVm } from './hotel-collection.mapper';
+import { HotelEntityVm } from './character-collection.vm';
+import { Character, getCharacterCollection } from './api';
+import { mapCharacterFromApiToVm } from './hotel-collection.mapper';
 import { mapToCollection } from 'common/mappers';
+import axios from 'axios';
 
 export const useHotelCollection = () => {
-  const [hotelCollection, setHotelCollection] = React.useState<HotelEntityVm[]>(
+
+   
+
+
+  const [charactersCollection, setCharactersCollection] = React.useState<Character[]>(
     []
   );
 
+
   const loadHotelCollection = () => {
-    getHotelCollection().then((result) =>
-      setHotelCollection(mapToCollection(result, mapFromApiToVm))
+    getCharacterCollection().then((result) =>
+      setCharactersCollection(mapToCollection(result, mapCharacterFromApiToVm))
     );
   };
 
-  return { hotelCollection, loadHotelCollection };
+  return { charactersCollection, loadHotelCollection };
 };
