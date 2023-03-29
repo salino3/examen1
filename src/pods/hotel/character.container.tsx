@@ -9,6 +9,7 @@ import {
 import { Lookup } from 'common/models';
 import { CharacterComponent } from './character.component';
 import { Character } from './api';
+import { MoreInfo } from 'scenes/MoreInfo';
 
 export const HotelContainer: React.FunctionComponent = (props) => {
   const [character, setCharacter] = React.useState<Character>(
@@ -43,7 +44,10 @@ const handleLoadCharacter = async () => {
     };
   };
 
+
   return (
+    
     <CharacterComponent character={character} onSave={handleSave} />
+    
   );
 };

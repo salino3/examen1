@@ -9,8 +9,12 @@ import Avatar from '@mui/material/Avatar/Avatar';
 import IconButton from '@mui/material/IconButton/IconButton';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
-import { CharacterEntityVm, HotelEntityVm } from '../character-collection.vm';
+import { CharacterEntityVm } from '../character-collection.vm';
 import * as classes from './character-card.styles';
+import { Link } from 'react-router-dom';
+
+
+
 
 interface Props {
   character: CharacterEntityVm;
@@ -28,16 +32,18 @@ export const CharacterCard: React.FunctionComponent<Props> = (props) => {
         <CardHeader
           avatar={<Avatar aria-label="imagen"></Avatar>}
           title={character.name}
-          subheader={character.status}
+          subheader={character.species}
         />
 
         <CardContent>
           <div className={classes.content}>
-            <CardMedia
-              image={character.image}
-              title={character.name}
-              style={{ height: 0, paddingTop: '56.25%' }}
-            />
+            <Link to={`/characters/moreinfo/${character.id}`}>
+              <CardMedia
+                image={character.image}
+                title={character.name}
+                style={{ height: 0, paddingTop: '56.25%' }}
+              />
+            </Link>
             <Typography variant="subtitle1" gutterBottom>
               {character.type}
             </Typography>

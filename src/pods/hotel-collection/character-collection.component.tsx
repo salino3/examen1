@@ -5,39 +5,48 @@ import { CharacterCard } from './components/character-card.component';
 import * as classes from './character-collection.styles';
  
 import { Character } from './api';
+import { useCharactersCollection } from './character-collection.hook';
 
 interface Props {
   characterCollections: Character[];
-  onCreateHotel: () => void;
+  onCreateCharacter: () => void;
   onEdit: (id: string | number) => void;
   onDelete: (id: string | number) => void;
 }
 
 
-export const CharacterCollectionComponent: React.FunctionComponent<Props> = (
-  props
-) => {
-  const { characterCollections, onCreateHotel, onEdit, onDelete } = props;
 
-console.log("A",characterCollections);
+export const CharacterCollectionComponent: React.FunctionComponent<Props> = ( props) => {
 
+  const {setCharactersCollectionId, charactersCollectionId } = useCharactersCollection();
+
+  const { characterCollections, onCreateCharacter, onEdit, onDelete } = props;
+
+// React.useEffect(() => {
+//   setCharactersCollectionId(characterCollections);
+// }, [characterCollections]);
+
+
+
+  console.log('D characters', charactersCollectionId);
 
   return (
     <div className={classes.root}>
-      <Button variant="contained" color="primary" onClick={onCreateHotel}>
+      <Button variant="contained" color="primary" onClick={onCreateCharacter}>
         Add hotel
       </Button>
 
       <ul className={classes.list}>
-        {characterCollections && characterCollections.map((character) => (
-          <li key={character.id}>
-            <CharacterCard
-              character={character}
-              onEdit={onEdit}
-              onDelete={onDelete}
-            />
-          </li>
-        ))}
+        {characterCollections &&
+          characterCollections.map((character) => (
+            <li key={character.id}>
+              <CharacterCard
+                character={character}
+                onEdit={onEdit}
+                onDelete={onDelete}
+              />
+            </li>
+          ))}
       </ul>
     </div>
   );

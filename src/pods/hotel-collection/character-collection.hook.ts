@@ -5,15 +5,18 @@ import { mapCharacterFromApiToVm } from './character-collection.mapper';
 import { mapToCollection } from 'common/mappers';
 import axios from 'axios';
 
-export const useHotelCollection = () => {
+export const useCharactersCollection = () => {
 
    
 
 
-  const [charactersCollection, setCharactersCollection] = React.useState<Character[]>(
-    []
-  );
+  const [charactersCollection, setCharactersCollection] = React.useState<
+    Character[]
+  >([]);
 
+   const [charactersCollectionId, setCharactersCollectionId] = React.useState<
+     Character[]
+   >();
 
   const loadHotelCollection = () => {
     getCharacterCollection().then((result) =>
@@ -21,5 +24,16 @@ export const useHotelCollection = () => {
     );
   };
 
-  return { charactersCollection, loadHotelCollection };
+  // if (!charactersCollectionId) {
+  //   setCharactersCollectionId(charactersCollection);
+  // };
+
+  
+
+  return {
+    charactersCollection,
+    loadHotelCollection,
+    charactersCollectionId,
+    setCharactersCollectionId,
+  };
 };

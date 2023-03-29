@@ -1,12 +1,12 @@
 import * as React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { linkRoutes } from 'core/router';
-import { useHotelCollection } from './character-collection.hook';
+import { useCharactersCollection } from './character-collection.hook';
 import { CharacterCollectionComponent } from './character-collection.component';
 import { deleteCharacter } from './api';
 
 export const HotelCollectionContainer = () => {
-  const { charactersCollection, loadHotelCollection } = useHotelCollection();
+  const { charactersCollection, loadHotelCollection } = useCharactersCollection();
   const navigate = useNavigate();
 
   React.useEffect(() => {
@@ -14,24 +14,24 @@ export const HotelCollectionContainer = () => {
   }, []);
 
   const handleCreateHotel = () => {
-    navigate(linkRoutes.createHotel);
+    navigate(linkRoutes.createCharacters);
   };
 
-  const handleEdit = (id: string) => {
+  const handleEdit = (id: string ) => {
     navigate(linkRoutes.editHotel(id));
   };
 
-  const handleDelete = async (id: string) => {
+  const handleDelete = async (id: string | number) => {
     await deleteCharacter(id);
     loadHotelCollection();
   };
 
   return (
-    <CharacterCollectionComponent
-      onCreateHotel={handleCreateHotel}
-      onEdit={handleEdit}
-      onDelete={handleDelete}
-      characterCollections={charactersCollection }
-    />
+      <CharacterCollectionComponent
+        onCreateCharacter={handleCreateHotel}
+        onEdit={handleEdit}
+        onDelete={handleDelete}
+        characterCollections={charactersCollection}
+      />
   );
 };

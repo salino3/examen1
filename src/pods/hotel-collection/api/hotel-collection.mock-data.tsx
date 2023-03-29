@@ -47,7 +47,7 @@ export const mockCharacterCollection: Character[] = [
     location: {
       name: 'string',
       url: 'string',
-    },
+    }, 
     status: 'ss',
     species: 'aa',
     gender: 'female',
