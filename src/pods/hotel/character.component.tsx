@@ -9,15 +9,17 @@ import { Lookup } from 'common/models';
 import { formValidation } from './character.validations';
 import * as classes from './character.styles';
 import { Character } from './api';
-import { TextField } from '@mui/material';
 import { Form, Formik } from 'formik';
+import { useNavigate } from 'react-router-dom';
 
 interface Props {
   character: Character;
-}
+};
 
 export const CharacterComponent: React.FunctionComponent<Props> = (props) => {
   const { character } = props;
+
+  const navigate = useNavigate();
 
 
   const onSave = async (values: any ) => {
@@ -32,21 +34,21 @@ export const CharacterComponent: React.FunctionComponent<Props> = (props) => {
        'Content-Type': 'application/json',
       },
       body: JSON.stringify(updatedCharacter),
-    });
-    
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-    
-    console.log('updatedCharacter', updatedCharacter);
+    })
+    .then((res) => {
 
       console.log(
         'Character updated successfully!',
-        updatedCharacter.bestSentence
-      );
+        updatedCharacter.bestSentence);
+      if (!res.ok) {
+        throw new Error(`HTTP error! status: ${res.status}`);
+      };
+      navigate("/");
+    });
+      
     } catch (error) {
       console.error('Error updating character:', error);
-    }
+    };
   }; 
 
   
@@ -61,12 +63,13 @@ export const CharacterComponent: React.FunctionComponent<Props> = (props) => {
 
       <Formik
         onSubmit={() => {}}
-        initialValues={ bSentece}
+        initialValues={ bSentece || ""}
         enableReinitialize={true}
         validate={formValidation.validateForm}
       >
         <Form className={classes.root}>
           <TextFieldComponent
+          required
             value={bSentece && bSentece || ""}
             onChange={(event) => setBSentece(event.target.value)}
             name="bestSentece"
@@ -77,28 +80,14 @@ export const CharacterComponent: React.FunctionComponent<Props> = (props) => {
             type="submit"
             variant="contained"
             color="primary"
+            disabled={bSentece ? false : true}
           >
             Save
           </Button>
         </Form>
       </Formik>
 
-      {/* <form onSubmit={onSave} >
-        <TextField
-          value={bSentece}
-          onChange={(event) => setBSentece(event.target.value)}
-          name="bestSentece"
-          label="bestSentece"
-        />
-        <Button
-          // onClick={(values) => onSave(values)}
-          type="submit"
-          variant="contained"
-          color="primary"
-        >
-          Save
-        </Button>
-      </form> */}
+  
     </>
   );
 };

@@ -3,7 +3,6 @@ const hotelMiddleware = (req, res, next) => {
     req.body = {
       ...req.body,
       thumbNailUrl: '/thumbnails/new-sentence',
-      // thumbNailUrl: '/thumbnails/new-Character.jpg',
     };
   }
   next();

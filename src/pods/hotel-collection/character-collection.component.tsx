@@ -1,6 +1,5 @@
 import * as React from 'react';
 import Button from '@mui/material/Button';
-import { HotelEntityVm } from './character-collection.vm';
 import { CharacterCard } from './components/character-card.component';
 import * as classes from './character-collection.styles';
  
@@ -24,9 +23,6 @@ export const CharacterCollectionComponent: React.FunctionComponent<Props> = ( pr
 
   return (
     <div className={classes.root}>
-      <Button variant="contained" color="primary" onClick={onCreateCharacter}>
-        Add hotel
-      </Button>
 
       <ul className={classes.list}>
         {characterCollections &&

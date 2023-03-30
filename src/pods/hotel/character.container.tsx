@@ -31,7 +31,7 @@ const [character, setCharacter] = React.useState<Character>();
     
     setCharacter(foundCharacter);
   }, [charactersCollection, id]);
-  //!
+  
 
 
 
@@ -47,7 +47,6 @@ console.log("el character", character)
   return (
     <>
         <CharacterComponent character={character} />
-   
     </>
   );
 };
