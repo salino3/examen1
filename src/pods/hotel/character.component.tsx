@@ -13,32 +13,61 @@ import { Character } from './api';
 
 interface Props {
   character: Character;
-  onSave: (character: Character) => void;
+  // onSave: (character: Character) => void;
 }
 
 export const CharacterComponent: React.FunctionComponent<Props> = (props) => {
-  const { character, onSave } = props;
+  const { character } = props;
+
+
+  const onSave = async (values) => {
+    const { id, bestSentence, ...rest } = character;
+    const updatedCharacter = { id, bestSentence, ...rest };
+
+    try {
+      const response = await fetch(`http://localhost:3000/results/${id}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(updatedCharacter),
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      console.log('Character updated successfully!');
+    } catch (error) {
+      console.error('Error updating character:', error);
+    }
+  };
+
+  //
+  
+
+
+  const [bSentece, setBSentece] = React.useState(character.bestSentence);
 
   return (
+    <>
+    <h2>{character.name}</h2>
     <Formik
       onSubmit={onSave}
       initialValues={character}
       enableReinitialize={true}
       validate={formValidation.validateForm}
-    >   
-
+      
+      >
       {() => (
         <Form className={classes.root}>
-          <TextFieldComponent name="name" label="Name" />
-          <TextFieldComponent name="species" label="Species" />
-          <TextFieldComponent name="status" label="Status" />
-          <TextFieldComponent name="gender" label="Gender" />
-          <TextFieldComponent name="image" label="Image" />
-          <Button type="submit" variant="contained" color="primary">
+          <TextFieldComponent onChange={(event) => setBSentece(event.target.value)}name="bestSentece" label="bestSentece" />
+          <Button type="submit"  variant="contained" color="primary">
             Save
           </Button>
         </Form>
       )}
     </Formik>
+      </>
   );
 };

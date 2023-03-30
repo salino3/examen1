@@ -47,7 +47,9 @@ const handleLoadCharacter = async () => {
 
   return (
     
-    <CharacterComponent character={character} onSave={handleSave} />
+    <CharacterComponent character={character} 
+    // onSave={handleSave}
+     />
     
   );
 };
