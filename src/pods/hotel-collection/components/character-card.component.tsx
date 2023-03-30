@@ -14,7 +14,7 @@ import * as classes from './character-card.styles';
 import { Link } from 'react-router-dom';
 
 
-
+ 
 
 interface Props {
   character: CharacterEntityVm;
@@ -50,10 +50,10 @@ export const CharacterCard: React.FunctionComponent<Props> = (props) => {
           </div>
         </CardContent>
         <CardActions>
-          <IconButton onClick={() => onEdit(character.id)}>
+          <IconButton onClick={() => onEdit(character && character?.id)}>
             <EditIcon />
           </IconButton>
-          <IconButton onClick={() => onDelete(character.id)}>
+          <IconButton onClick={() => onDelete(character && character?.id)}>
             <DeleteIcon />
           </IconButton>
         </CardActions>

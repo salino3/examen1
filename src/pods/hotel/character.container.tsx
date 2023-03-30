@@ -1,6 +1,5 @@
 import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import * as api from './api';
 import { createEmptyInfo } from './character.vm';
 import {
   mapCharacterFromApiToVm,
@@ -8,48 +7,50 @@ import {
 } from './character.mappers';
 import { Lookup } from 'common/models';
 import { CharacterComponent } from './character.component';
-import { Character } from './api';
+import {  Character } from './api';
 import { MoreInfo } from 'scenes/MoreInfo';
+import { useCharactersCollection } from 'pods/hotel-collection/character-collection.hook';
 
 export const HotelContainer: React.FunctionComponent = (props) => {
-  const [character, setCharacter] = React.useState<Character>(
-    createEmptyInfo()
-  );
-  const { id } = useParams<{ id: string }>();
-  // const navigate = useNavigate();
 
- 
+  const { charactersCollection, loadHotelCollection } = useCharactersCollection();
+const [character, setCharacter] = React.useState<Character>();
+  const { id } = useParams();
 
-const handleLoadCharacter = async () => {
-  const apiCharacter = await api.getRickAndMorty(Number(id));
-  setCharacter(mapCharacterFromApiToVm(apiCharacter));
-  console.log(apiCharacter);
-};
+  //!
 
 
   React.useEffect(() => {
-    if (id) {
-      handleLoadCharacter();
-    }
-    // handleLoadCityCollection();
+    loadHotelCollection();
   }, []);
 
-  // const handleSave = async (character: Character) => {
-  //   const apiInfo = mapCharacterFromVmToApi(character);
-  //   const success = await api.saveCharacter(apiInfo);
-  //   if (success) {
-  //     navigate(-1);
-  //   } else {
-  //     alert('Error on save character');
-  //   };
-  // };
+  React.useEffect( () => {
+    const foundCharacter: any =  charactersCollection.find(
+      (item) => item.id === id
+    );
+    
+    setCharacter(foundCharacter);
+  }, [charactersCollection, id]);
+  //!
 
+
+
+  React.useEffect(() => {
+    const foundCharacter: any = charactersCollection.find((item) => item.id === Number(id));
+    if (foundCharacter) {
+      setCharacter( foundCharacter);
+    }
+  }, [charactersCollection, id]);
+
+console.log("el character", character)
 
   return (
-    
-    <CharacterComponent character={character} 
-    //  onSave={handleSave}
-     />
-    
+    <>
+        <CharacterComponent character={character} />
+   
+    </>
   );
 };
+
+
+

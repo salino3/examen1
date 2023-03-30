@@ -22,11 +22,11 @@ export const CharacterComponent: React.FunctionComponent<Props> = (props) => {
 
   const onSave = async (values: any ) => {
      values.preventDefault();
- const {  id } = character;
- const updatedCharacter = { ...character, bestSentence: bSentece };
+
+     const updatedCharacter = { ...character, bestSentence: bSentece };
  
  try {
-   const response = await fetch(`http://localhost:3000/results/${id}`, {
+   const response = await fetch(`http://localhost:3000/results/${character?.id}`, {
      method: 'PUT',
      headers: {
        'Content-Type': 'application/json',
@@ -47,33 +47,33 @@ export const CharacterComponent: React.FunctionComponent<Props> = (props) => {
     } catch (error) {
       console.error('Error updating character:', error);
     }
-  };
+  }; 
 
-  //
+  
   
 
 
-  const [bSentece, setBSentece] = React.useState(character.bestSentence || "");
+  const [bSentece, setBSentece] = React.useState(character?.bestSentence || "");
 
   return (
     <>
-      <h2>{character.name}</h2>
+      <h2>{character?.name}</h2>
 
       <Formik
         onSubmit={() => {}}
-        initialValues={character.bestSentence || ''}
+        initialValues={ bSentece}
         enableReinitialize={true}
         validate={formValidation.validateForm}
       >
         <Form className={classes.root}>
           <TextFieldComponent
-            value={bSentece}
+            value={bSentece && bSentece || ""}
             onChange={(event) => setBSentece(event.target.value)}
             name="bestSentece"
             label="bestSentece"
           />
           <Button
-          onClick={(values) => onSave(values)}
+            onClick={(values) => onSave(values)}
             type="submit"
             variant="contained"
             color="primary"
@@ -105,8 +105,4 @@ export const CharacterComponent: React.FunctionComponent<Props> = (props) => {
 
 
 
- {
-   /*
-  
-       */
- }
+ 

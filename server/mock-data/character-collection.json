@@ -28,7 +28,7 @@
       ],
       "url": "https://rickandmortyapi.com/api/character/1",
       "created": "2017-11-04T18:48:46.250Z",
-      "bestSentence": "Prueba 2"
+      "bestSentence": "Prueba 3"
     },
     {
       "id": 2,
@@ -115,7 +115,8 @@
         "https://rickandmortyapi.com/api/episode/51"
       ],
       "url": "https://rickandmortyapi.com/api/character/3",
-      "created": "2017-11-04T19:09:56.428Z"
+      "created": "2017-11-04T19:09:56.428Z",
+      "bestSentence": "a"
     },
     {
       "id": 4,
@@ -178,7 +179,8 @@
         "https://rickandmortyapi.com/api/episode/51"
       ],
       "url": "https://rickandmortyapi.com/api/character/4",
-      "created": "2017-11-04T19:22:43.665Z"
+      "created": "2017-11-04T19:22:43.665Z",
+      "bestSentence": ""
     },
     {
       "id": 5,
@@ -238,29 +240,18 @@
         "https://rickandmortyapi.com/api/episode/51"
       ],
       "url": "https://rickandmortyapi.com/api/character/5",
-      "created": "2017-11-04T19:26:56.301Z"
+      "created": "2017-11-04T19:26:56.301Z",
+      "bestSentence": ""
     },
     {
       "id": 6,
       "name": "Abadango Cluster Princess",
       "status": "Alive",
+      "image": "https://rickandmortyapi.com/api/character/avatar/6.jpeg",
       "species": "Alien",
       "type": "",
       "gender": "Female",
-      "origin": {
-        "name": "Abadango",
-        "url": "https://rickandmortyapi.com/api/location/2"
-      },
-      "location": {
-        "name": "Abadango",
-        "url": "https://rickandmortyapi.com/api/location/2"
-      },
-      "image": "https://rickandmortyapi.com/api/character/avatar/6.jpeg",
-      "episode": [
-        "https://rickandmortyapi.com/api/episode/27"
-      ],
-      "url": "https://rickandmortyapi.com/api/character/6",
-      "created": "2017-11-04T19:50:28.250Z"
+      "bestSentence": "Probando..."
     },
     {
       "id": 7,
@@ -283,7 +274,8 @@
         "https://rickandmortyapi.com/api/episode/11"
       ],
       "url": "https://rickandmortyapi.com/api/character/7",
-      "created": "2017-11-04T19:59:20.523Z"
+      "created": "2017-11-04T19:59:20.523Z",
+      "bestSentence": ""
     },
     {
       "id": 8,
@@ -305,7 +297,8 @@
         "https://rickandmortyapi.com/api/episode/28"
       ],
       "url": "https://rickandmortyapi.com/api/character/8",
-      "created": "2017-11-04T20:03:34.737Z"
+      "created": "2017-11-04T20:03:34.737Z",
+      "bestSentence": ""
     },
     {
       "id": 9,
@@ -327,7 +320,8 @@
         "https://rickandmortyapi.com/api/episode/24"
       ],
       "url": "https://rickandmortyapi.com/api/character/9",
-      "created": "2017-11-04T20:06:54.976Z"
+      "created": "2017-11-04T20:06:54.976Z",
+      "bestSentence": ""
     },
     {
       "id": 10,
@@ -349,29 +343,18 @@
         "https://rickandmortyapi.com/api/episode/25"
       ],
       "url": "https://rickandmortyapi.com/api/character/10",
-      "created": "2017-11-04T20:19:09.017Z"
+      "created": "2017-11-04T20:19:09.017Z",
+      "bestSentence": ""
     },
     {
       "id": 11,
       "name": "Albert Einstein",
       "status": "Dead",
+      "image": "https://rickandmortyapi.com/api/character/avatar/11.jpeg",
       "species": "Human",
       "type": "",
       "gender": "Male",
-      "origin": {
-        "name": "Earth (C-137)",
-        "url": "https://rickandmortyapi.com/api/location/1"
-      },
-      "location": {
-        "name": "Earth (Replacement Dimension)",
-        "url": "https://rickandmortyapi.com/api/location/20"
-      },
-      "image": "https://rickandmortyapi.com/api/character/avatar/11.jpeg",
-      "episode": [
-        "https://rickandmortyapi.com/api/episode/12"
-      ],
-      "url": "https://rickandmortyapi.com/api/character/11",
-      "created": "2017-11-04T20:20:20.965Z"
+      "bestSentence": "Albert Prueba 2"
     },
     {
       "id": 12,
@@ -393,7 +376,8 @@
         "https://rickandmortyapi.com/api/episode/3"
       ],
       "url": "https://rickandmortyapi.com/api/character/12",
-      "created": "2017-11-04T20:32:33.144Z"
+      "created": "2017-11-04T20:32:33.144Z",
+      "bestSentence": ""
     },
     {
       "id": 13,
@@ -415,7 +399,8 @@
         "https://rickandmortyapi.com/api/episode/31"
       ],
       "url": "https://rickandmortyapi.com/api/character/13",
-      "created": "2017-11-04T20:33:30.779Z"
+      "created": "2017-11-04T20:33:30.779Z",
+      "bestSentence": ""
     },
     {
       "id": 14,
@@ -437,7 +422,8 @@
         "https://rickandmortyapi.com/api/episode/10"
       ],
       "url": "https://rickandmortyapi.com/api/character/14",
-      "created": "2017-11-04T20:51:31.373Z"
+      "created": "2017-11-04T20:51:31.373Z",
+      "bestSentence": ""
     },
     {
       "id": 15,
@@ -459,7 +445,8 @@
         "https://rickandmortyapi.com/api/episode/10"
       ],
       "url": "https://rickandmortyapi.com/api/character/15",
-      "created": "2017-11-04T20:56:13.215Z"
+      "created": "2017-11-04T20:56:13.215Z",
+      "bestSentence": ""
     },
     {
       "id": 16,
@@ -481,7 +468,8 @@
         "https://rickandmortyapi.com/api/episode/15"
       ],
       "url": "https://rickandmortyapi.com/api/character/16",
-      "created": "2017-11-04T21:12:45.235Z"
+      "created": "2017-11-04T21:12:45.235Z",
+      "bestSentence": ""
     },
     {
       "id": 17,
@@ -503,7 +491,8 @@
         "https://rickandmortyapi.com/api/episode/3"
       ],
       "url": "https://rickandmortyapi.com/api/character/17",
-      "created": "2017-11-04T22:21:24.481Z"
+      "created": "2017-11-04T22:21:24.481Z",
+      "bestSentence": ""
     },
     {
       "id": 18,
@@ -526,7 +515,8 @@
         "https://rickandmortyapi.com/api/episode/28"
       ],
       "url": "https://rickandmortyapi.com/api/character/18",
-      "created": "2017-11-04T22:25:29.008Z"
+      "created": "2017-11-04T22:25:29.008Z",
+      "bestSentence": ""
     },
     {
       "id": 19,
@@ -548,7 +538,8 @@
         "https://rickandmortyapi.com/api/episode/10"
       ],
       "url": "https://rickandmortyapi.com/api/character/19",
-      "created": "2017-11-04T22:28:13.756Z"
+      "created": "2017-11-04T22:28:13.756Z",
+      "bestSentence": ""
     },
     {
       "id": 20,
@@ -570,7 +561,8 @@
         "https://rickandmortyapi.com/api/episode/8"
       ],
       "url": "https://rickandmortyapi.com/api/character/20",
-      "created": "2017-11-04T22:34:53.659Z"
+      "created": "2017-11-04T22:34:53.659Z",
+      "bestSentence": ""
     }
   ]
 }

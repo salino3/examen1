@@ -1,5 +1,5 @@
 export interface Character {
-  preventDefault(): unknown;
+  preventDefault?: () => void;
   id: number | string;
   name: string;
   status: string;
@@ -18,7 +18,7 @@ export interface Character {
   episode: string[];
   url: string;
   created: string;
-  bestSentence?: string;
+  bestSentence: string;
 }
 
 export interface Info {
