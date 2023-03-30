@@ -4,13 +4,13 @@ import { linkRoutes } from 'core/router';
 import { useCharactersCollection } from './character-collection.hook';
 import { CharacterCollectionComponent } from './character-collection.component';
 
-export const HotelCollectionContainer = () => {
+export const CharacterCollectionContainer = () => {
   
-  let { charactersCollection, loadHotelCollection } = useCharactersCollection();
+  let { charactersCollection, loadCharacterCollection } = useCharactersCollection();
   const navigate = useNavigate();
 
   React.useEffect(() => {
-    loadHotelCollection();
+    loadCharacterCollection();
   }, []);
 
 
@@ -22,7 +22,7 @@ export const HotelCollectionContainer = () => {
   
   const handleDelete = async (id: string | number) => {
     await deleteCharacter(id);
-    loadHotelCollection();
+    loadCharacterCollection();
   };
   
 

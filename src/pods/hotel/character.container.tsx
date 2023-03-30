@@ -4,14 +4,13 @@ import { CharacterComponent } from './character.component';
 import { Character } from './api';
 import { useCharactersCollection } from 'pods/hotel-collection/character-collection.hook';
 
-export const HotelContainer: React.FunctionComponent = (props) => {
-  const { charactersCollection, loadHotelCollection } =
-    useCharactersCollection();
+export const CharacterContainer: React.FunctionComponent = (props) => {
+  const { charactersCollection, loadCharacterCollection } = useCharactersCollection();
   const [character, setCharacter] = React.useState<Character>();
   const { id } = useParams();
 
   React.useEffect(() => {
-    loadHotelCollection();
+    loadCharacterCollection();
   }, []);
 
   React.useEffect(() => {

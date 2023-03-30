@@ -2,7 +2,6 @@ import * as React from 'react';
 import { Character, getCharacterCollection } from './api';
 import { mapCharacterFromApiToVm } from './character-collection.mapper';
 import { mapToCollection } from 'common/mappers';
-import axios from 'axios';
 
 export const useCharactersCollection = () => {
 
@@ -13,7 +12,7 @@ export const useCharactersCollection = () => {
 
   
 
-  const loadHotelCollection = () => {
+  const loadCharacterCollection = () => {
     getCharacterCollection().then((result) =>
       setCharactersCollection(mapToCollection(result, mapCharacterFromApiToVm))
     );
@@ -23,6 +22,6 @@ export const useCharactersCollection = () => {
 
   return {
     charactersCollection,
-    loadHotelCollection
+    loadCharacterCollection,
   };
 };

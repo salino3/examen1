@@ -8,14 +8,14 @@ import { Character } from 'pods/hotel-collection/api';
 
 export const MoreInfo: React.FC = () => {
 
-  const { charactersCollection, loadHotelCollection } = useCharactersCollection();
+  const { charactersCollection, loadCharacterCollection } = useCharactersCollection();
 
-const [character, setCharacter] = React.useState<Character | undefined>();
+  const [character, setCharacter] = React.useState<Character | undefined>();
 
   const { id } = useParams();
 
     React.useEffect(() => {
-      loadHotelCollection();
+      loadCharacterCollection();
     }, []);
 
 React.useEffect(() => {

@@ -9,8 +9,8 @@ import IconButton from '@mui/material/IconButton/IconButton';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { CharacterEntityVm } from '../character-collection.vm';
-import * as classes from './character-card.styles';
 import { Link } from 'react-router-dom';
+import * as classes from './character-card.styles';
 
  
 
