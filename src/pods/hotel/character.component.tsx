@@ -25,15 +25,12 @@ export const CharacterComponent: React.FunctionComponent<Props> = (props) => {
       initialValues={character}
       enableReinitialize={true}
       validate={formValidation.validateForm}
-    >
-      
+    >   
 
       {() => (
         <Form className={classes.root}>
           <TextFieldComponent name="name" label="Name" />
           <TextFieldComponent name="species" label="Species" />
-          <SelectComponent name="origin" label="Origin" items={[]}  />
-          <SelectComponent name="location" label="Location" items={[]}  />
           <TextFieldComponent name="status" label="Status" />
           <TextFieldComponent name="gender" label="Gender" />
           <TextFieldComponent name="image" label="Image" />

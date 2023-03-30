@@ -7,16 +7,12 @@ import axios from 'axios';
 
 export const useCharactersCollection = () => {
 
-   
-
 
   const [charactersCollection, setCharactersCollection] = React.useState<
     Character[]
   >([]);
 
-   const [charactersCollectionId, setCharactersCollectionId] = React.useState<
-     Character[]
-   >();
+  
 
   const loadHotelCollection = () => {
     getCharacterCollection().then((result) =>
@@ -24,16 +20,11 @@ export const useCharactersCollection = () => {
     );
   };
 
-  // if (!charactersCollectionId) {
-  //   setCharactersCollectionId(charactersCollection);
-  // };
-
+  
   
 
   return {
     charactersCollection,
-    loadHotelCollection,
-    charactersCollectionId,
-    setCharactersCollectionId,
+    loadHotelCollection
   };
 };

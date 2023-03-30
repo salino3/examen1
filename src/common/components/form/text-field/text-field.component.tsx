@@ -25,6 +25,7 @@ export const TextFieldComponent: React.FunctionComponent<TextFieldProps> = (
       helperText={hasError ? helperText : ''}
       fullWidth={true}
       margin="normal"
+      
       inputProps={{
         ...inputProps,
         className: cx(inputProps?.className, classes.input),

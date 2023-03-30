@@ -25,9 +25,9 @@ export const CharacterInfo: React.FC<Props> = (props) => {
           <img src={character?.image} alt="photo" />
         </Box>
         <Box className='box4'>
-          <Typography> <b>Species:</b> {character?.species}</Typography>
-          <Typography> <b>Type:</b> {character.type}</Typography>
-          <Typography> <b>Best Sentence:</b> {character?.bestSentences || "* Not Found *"}</Typography>
+          <Typography> <b>Species:</b> {character?.species || "* Not Found *"}</Typography>
+          <Typography> <b>Type:</b> {character.type || "* Not Found *"}</Typography>
+          <Typography> <b>Best Sentence:</b> {character?.bestSentence || "* Not Found *"}</Typography>
         </Box>
       </Box>
     </Box>

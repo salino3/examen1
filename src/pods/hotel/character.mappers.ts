@@ -10,6 +10,7 @@ export const mapCharacterFromApiToVm = (character: Character): Character => ({
   species: character.species,
   type: character.type,
   gender: character.gender,
+  bestSentence: character.bestSentence,
 });
 
 export const mapCharacterFromVmToApi = (character: Character): Character => ({
@@ -20,4 +21,5 @@ export const mapCharacterFromVmToApi = (character: Character): Character => ({
   species: character.species,
   type: character.type,
   gender: character.gender,
-});
+  bestSentence: character.bestSentence
+}) 

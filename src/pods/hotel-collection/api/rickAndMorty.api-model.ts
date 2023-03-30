@@ -50,7 +50,7 @@ export interface Character {
   episode?: string[];
   url?: string;
   created?: string;
-  bestSentences?: string;
+  bestSentence?: string;
 }
 
 export interface Origin {

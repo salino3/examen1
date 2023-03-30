@@ -18,17 +18,9 @@ interface Props {
 
 export const CharacterCollectionComponent: React.FunctionComponent<Props> = ( props) => {
 
-  const {setCharactersCollectionId, charactersCollectionId } = useCharactersCollection();
 
   const { characterCollections, onCreateCharacter, onEdit, onDelete } = props;
 
-// React.useEffect(() => {
-//   setCharactersCollectionId(characterCollections);
-// }, [characterCollections]);
-
-
-
-  console.log('D characters', charactersCollectionId);
 
   return (
     <div className={classes.root}>
