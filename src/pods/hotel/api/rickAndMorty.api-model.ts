@@ -1,4 +1,5 @@
 export interface Character {
+  preventDefault(): unknown;
   id: number | string;
   name: string;
   status: string;

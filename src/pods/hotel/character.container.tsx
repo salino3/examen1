@@ -16,7 +16,7 @@ export const HotelContainer: React.FunctionComponent = (props) => {
     createEmptyInfo()
   );
   const { id } = useParams<{ id: string }>();
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
  
 
@@ -34,21 +34,21 @@ const handleLoadCharacter = async () => {
     // handleLoadCityCollection();
   }, []);
 
-  const handleSave = async (character: Character) => {
-    const apiInfo = mapCharacterFromVmToApi(character);
-    const success = await api.saveCharacter(apiInfo);
-    if (success) {
-      navigate(-1);
-    } else {
-      alert('Error on save character');
-    };
-  };
+  // const handleSave = async (character: Character) => {
+  //   const apiInfo = mapCharacterFromVmToApi(character);
+  //   const success = await api.saveCharacter(apiInfo);
+  //   if (success) {
+  //     navigate(-1);
+  //   } else {
+  //     alert('Error on save character');
+  //   };
+  // };
 
 
   return (
     
     <CharacterComponent character={character} 
-    // onSave={handleSave}
+    //  onSave={handleSave}
      />
     
   );
