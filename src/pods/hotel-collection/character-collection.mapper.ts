@@ -1,5 +1,3 @@
-
-
 import * as apiModel from './api/rickAndMorty.api-model';
 import * as viewModel from './character-collection.vm';
 

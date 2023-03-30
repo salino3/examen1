@@ -12,7 +12,6 @@ import { CharacterEntityVm } from '../character-collection.vm';
 import * as classes from './character-card.styles';
 import { Link } from 'react-router-dom';
 
-
  
 
 interface Props {
@@ -24,7 +23,6 @@ interface Props {
 export const CharacterCard: React.FunctionComponent<Props> = (props) => {
   const { character, onEdit, onDelete } = props;
 
-  console.log("leyendo Character",character)
   return (
     <>
       <Card>
@@ -32,7 +30,6 @@ export const CharacterCard: React.FunctionComponent<Props> = (props) => {
           title={character.name}
           subheader={character.species}
         />
-
         <CardContent>
           <div className={classes.content}>
             <Link to={`/characters/moreinfo/${character.id}`}>

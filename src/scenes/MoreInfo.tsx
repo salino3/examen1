@@ -10,9 +10,7 @@ export const MoreInfo: React.FC = () => {
 
   const { charactersCollection, loadHotelCollection } = useCharactersCollection();
 
-const [character, setCharacter] = React.useState<
- Character | undefined
->();
+const [character, setCharacter] = React.useState<Character | undefined>();
 
   const { id } = useParams();
 
@@ -26,9 +24,6 @@ React.useEffect(() => {
   );
     setCharacter(foundCharacter);
 }, [charactersCollection, id]);
-
-
-  console.log("6 character", character)
 
 
 

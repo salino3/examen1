@@ -1,14 +1,11 @@
 import * as React from 'react';
-import Button from '@mui/material/Button';
 import { CharacterCard } from './components/character-card.component';
 import * as classes from './character-collection.styles';
  
 import { Character } from './api';
-import { useCharactersCollection } from './character-collection.hook';
 
 interface Props {
   characterCollections: Character[];
-  onCreateCharacter: () => void;
   onEdit: (id: string | number) => void;
   onDelete: (id: string | number) => void;
 }
@@ -18,7 +15,7 @@ interface Props {
 export const CharacterCollectionComponent: React.FunctionComponent<Props> = ( props) => {
 
 
-  const { characterCollections, onCreateCharacter, onEdit, onDelete } = props;
+  const { characterCollections, onEdit, onDelete } = props;
 
 
   return (

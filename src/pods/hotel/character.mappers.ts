@@ -1,5 +1,3 @@
-
-
 import { Character } from './api/rickAndMorty.api-model';
 
 export const mapCharacterFromApiToVm = (character: Character): Character => ({
