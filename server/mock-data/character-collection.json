@@ -24,7 +24,7 @@
       "species": "Human",
       "type": "",
       "gender": "Male",
-      "bestSentence": "Try 4 again"
+      "bestSentence": "I'm Morty Smith"
     },
     {
       "id": 3,
@@ -108,7 +108,7 @@
       "species": "Human",
       "type": "",
       "gender": "Male",
-      "bestSentence": "Hola otra vez"
+      "bestSentence": "Buenos días"
     },
     {
       "id": 6,
